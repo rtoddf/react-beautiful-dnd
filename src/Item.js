@@ -11,11 +11,10 @@ const Container = styled.div`
   color: #fff;
 `;
 
-
-export default class Task extends React.Component {
+class Item extends React.Component {
   render() {
     return (
-      <Draggable draggableId={this.props.task.id} index={this.props.index}>
+      <Draggable draggableId={this.props.item.id} index={this.props.index}>
         {provided => (
           <Container 
             {...provided.draggableProps}
@@ -23,10 +22,12 @@ export default class Task extends React.Component {
             // video shows innerRef. should be ref
             ref={provided.innerRef}
           >
-            {this.props.task.content}
+            {this.props.item.content}
           </Container>
         )}
       </Draggable>
     )
   }
 }
+
+export default Item;

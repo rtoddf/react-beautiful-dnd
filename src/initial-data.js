@@ -1,15 +1,16 @@
 const initialData = {
-  tasks: {
-    'task-1': { id: 'task-1', content: 'Take out the garbage'},
-    'task-2': { id: 'task-2', content: 'Watch my favorite show'},
-    'task-3': { id: 'task-3', content: 'Charge my phone'},
-    'task-4': { id: 'task-4', content: 'Cook dinner'},
+  items: {
+    'item-1': { id: 'item-1', content: 'Weather'},
+    'item-2': { id: 'item-2', content: 'Top Local Stories'},
+    'item-3': { id: 'item-3', content: 'Local Crime'},
+    'item-4': { id: 'item-4', content: '2 Investigates'},
+    'item-5': { id: 'item-5', content: 'Access Atlanta'},
   },
   columns: {
     'column-1': {
       id: 'column-1',
-      title: 'To do',
-      taskIds: ['task-1', 'task-2', 'task-3', 'task-4'],
+      title: 'Menu Items',
+      itemIds: ['item-1', 'item-2', 'item-3', 'item-4', 'item-5'],
     },
   },
   columnOrder: ['column-1'],

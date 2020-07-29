@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '@atlaskit/css-reset';
 
 import { DragDropContext} from 'react-beautiful-dnd';
 
@@ -26,13 +25,13 @@ class App extends React.Component {
     }
 
     const column = this.state.columns[source.droppableId];
-    const newTaskIds = Array.from(column.taskIds);
-    newTaskIds.splice(source.index, 1);
-    newTaskIds.splice(destination.index, 0, draggableId);
+    const newItemIds = Array.from(column.itemIds);
+    newItemIds.splice(source.index, 1);
+    newItemIds.splice(destination.index, 0, draggableId);
 
     const newColumn = {
       ...column,
-      taskIds: newTaskIds,
+      itemIds: newItemIds,
     };
 
     const newState = {
@@ -43,8 +42,6 @@ class App extends React.Component {
       }
     }
 
-    console.log('this.state: ', newTaskIds)
-
     this.setState(newState);
   }
 
@@ -54,9 +51,9 @@ class App extends React.Component {
         {this.state.columnOrder.map(columnId => {
         
           const column = this.state.columns[columnId];
-          const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
+          const items = column.itemIds.map(itemId => this.state.items[itemId]);
 
-          return <Column key={column.id} column={column} tasks={tasks} />;
+          return <Column key={column.id} column={column} items={items} />;
         })}
       </DragDropContext>
     );
